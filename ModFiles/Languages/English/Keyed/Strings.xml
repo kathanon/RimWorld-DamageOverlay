@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<kathanon.DamageOverlay.toggleToolTip>Show Damage Overlay</kathanon.DamageOverlay.toggleToolTip>
+
+	<kathanon.DamageOverlay.opacity.title>Opacity</kathanon.DamageOverlay.opacity.title>
+	<kathanon.DamageOverlay.opacity.desc>The opacity of the overlay on the map, from 0 (fully transparent) to 1 (opaque).</kathanon.DamageOverlay.opacity.desc>
+	
+	<kathanon.DamageOverlay.filter.title>Building filter</kathanon.DamageOverlay.filter.title>
+	<kathanon.DamageOverlay.filter.desc>Controls what buildings the overlay is applied to. Note that "buildings" include natural rock and similar.</kathanon.DamageOverlay.filter.desc>
+	<kathanon.DamageOverlay.filter.All>All</kathanon.DamageOverlay.filter.All>
+	<kathanon.DamageOverlay.filter.NonMineable>All non-mineable</kathanon.DamageOverlay.filter.NonMineable>
+	<kathanon.DamageOverlay.filter.Repairable>Possible to repair</kathanon.DamageOverlay.filter.Repairable>
+	<kathanon.DamageOverlay.filter.Owned>Owned by player</kathanon.DamageOverlay.filter.Owned>
+	<kathanon.DamageOverlay.filter.Walls>Walls and doors only</kathanon.DamageOverlay.filter.Walls>
+
+	<kathanon.DamageOverlay.interval.title>Update interval</kathanon.DamageOverlay.interval.title>
+	<kathanon.DamageOverlay.interval.desc>The number of game ticks between updates of the overlay. A lower value will give smoother updates, but decrease performance.</kathanon.DamageOverlay.interval.desc>
+
+	<kathanon.DamageOverlay.numSteps.title>Gradient steps</kathanon.DamageOverlay.numSteps.title>
+	<kathanon.DamageOverlay.numSteps.desc>The number of steps in the color gradient from least to most damaged.</kathanon.DamageOverlay.numSteps.desc>
+</LanguageData>
