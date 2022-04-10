@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddToggle_Detour.cs" />
+    <Compile Include="ColorSetting.cs" />
     <Compile Include="DamageOverlay.cs" />
     <Compile Include="Filters.cs" />
     <Compile Include="LabelAndSliderWidget.cs" />

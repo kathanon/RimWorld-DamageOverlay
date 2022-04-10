@@ -12,8 +12,6 @@ namespace DamageOverlay
         private CellBoolDrawer _drawer;
         private readonly MySettings settings = Main.Instance.MySettings;
 
-        private Color minColor = Color.red;
-        private Color maxColor = Color.green;
         private int numSteps;
         private Predicate<Thing> filter;
 
@@ -25,6 +23,8 @@ namespace DamageOverlay
 
         public void ResetColorMap()
         {
+            Color minColor = settings.minColor;
+            Color maxColor = settings.maxColor;
             numSteps = settings.numSteps;
             colors = new Color[numSteps];
             for (int i = 0; i < numSteps; i++)

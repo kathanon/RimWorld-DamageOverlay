@@ -27,6 +27,12 @@ namespace DamageOverlay
             setting.CustomDrawer = instance.Update;
         }
 
+        public static void UseCommonMaxString(string maxText)
+        {
+            commonMaxText = maxText;
+        }
+        private static string commonMaxText = null; 
+
         private static readonly Func<float, float>  floatFrom  = v => v;
         private static readonly Func<float, float>  floatTo    = v => v;
         private static readonly Func<float, string> floatLabel = v => v.ToString();
@@ -36,7 +42,6 @@ namespace DamageOverlay
 
         private class Widget<T>
         {
-            private static string longestMaxText = ""; 
 
             private readonly SettingHandle<T> setting;
             private readonly Func<T, string> label;
@@ -60,11 +65,7 @@ namespace DamageOverlay
                 this.min = from(min);
                 this.max = from(max);
                 this.roundTo = roundTo;
-                maxText = label(max);
-                if (maxText.Length > longestMaxText.Length)
-                {
-                    longestMaxText = maxText;
-                }
+                maxText = commonMaxText ?? label(max);
             }
 
             public bool Update(Rect rect)
@@ -72,7 +73,7 @@ namespace DamageOverlay
                 T old = setting;
                 float oldVal = from(old);
 
-                float labelWidth = Text.CalcSize(longestMaxText).x + 1f;
+                float labelWidth = Text.CalcSize(maxText).x + 1f;
                 Rect bounds = rect.ContractedBy(border);
                 Rect labelBounds = bounds.LeftPartPixels(labelWidth);
                 Rect sliderBounds = bounds.RightPartPixels(bounds.width - labelWidth - gap);

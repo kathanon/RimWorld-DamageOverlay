@@ -18,4 +18,17 @@
 
 	<kathanon.DamageOverlay.numSteps.title>Gradient steps</kathanon.DamageOverlay.numSteps.title>
 	<kathanon.DamageOverlay.numSteps.desc>The number of steps in the color gradient from least to most damaged.</kathanon.DamageOverlay.numSteps.desc>
+
+	<kathanon.DamageOverlay.minColor.title>Low color</kathanon.DamageOverlay.minColor.title>
+	<kathanon.DamageOverlay.minColor.desc>The color used for buildings that are almost destroyed.</kathanon.DamageOverlay.minColor.desc>
+
+	<kathanon.DamageOverlay.maxColor.title>High color</kathanon.DamageOverlay.maxColor.title>
+	<kathanon.DamageOverlay.maxColor.desc>The color used for buildings that are barely damaged.</kathanon.DamageOverlay.maxColor.desc>
+
+	<kathanon.DamageOverlay.color.red>Red</kathanon.DamageOverlay.color.red>
+	<kathanon.DamageOverlay.color.green>Green</kathanon.DamageOverlay.color.green>
+	<kathanon.DamageOverlay.color.blue>Blue</kathanon.DamageOverlay.color.blue>
+	<kathanon.DamageOverlay.color.yellow>Yellow</kathanon.DamageOverlay.color.yellow>
+	<kathanon.DamageOverlay.color.cyan>Cyan</kathanon.DamageOverlay.color.cyan>
+	<kathanon.DamageOverlay.color.magenta>Magenta</kathanon.DamageOverlay.color.magenta>
 </LanguageData>

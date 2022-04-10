@@ -20,5 +20,18 @@ namespace DamageOverlay
         public static readonly string filter_prefix = (PREFIX + "filter.");
         public static readonly string filter        = (filter_prefix + "title"  ).Translate();
         public static readonly string filter_desc   = (filter_prefix + "desc"   ).Translate();
+
+        public static readonly string minColor      = (PREFIX + "minColor.title").Translate();
+        public static readonly string minColor_desc = (PREFIX + "minColor.desc" ).Translate();
+
+        public static readonly string maxColor      = (PREFIX + "maxColor.title").Translate();
+        public static readonly string maxColor_desc = (PREFIX + "maxColor.desc" ).Translate();
+
+        public static readonly string color_red     = (PREFIX + "color.red"    ).Translate();
+        public static readonly string color_green   = (PREFIX + "color.green"  ).Translate();
+        public static readonly string color_blue    = (PREFIX + "color.blue"   ).Translate();
+        public static readonly string color_yellow  = (PREFIX + "color.yellow" ).Translate();
+        public static readonly string color_cyan    = (PREFIX + "color.cyan"   ).Translate();
+        public static readonly string color_magenta = (PREFIX + "color.magenta").Translate();
     }
 }

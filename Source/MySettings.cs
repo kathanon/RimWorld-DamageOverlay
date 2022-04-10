@@ -11,12 +11,13 @@ namespace DamageOverlay
     {
         public MySettings(ModSettingsPack pack)
         {
+            LabelAndSliderWidget.UseCommonMaxString("10000");
             opacity = pack.GetHandle(
                 "opacity",
                 Strings.opacity,
                 Strings.opacity_desc,
                 0.33f);
-            opacity.ValueChanged += (o) => Main.Instance.Overlay.ResetDrawer();
+            opacity.ValueChanged += o => Main.Instance.Overlay.ResetDrawer();
             LabelAndSliderWidget.ForFloat(opacity, 0f, 1f, 0.01f, v => Math.Round(100f * v, 0) + "%");
 
             filter = pack.GetHandle(
@@ -26,7 +27,7 @@ namespace DamageOverlay
                 Filters.Type.Repairable,
                 null, 
                 Strings.filter_prefix);
-            filter.ValueChanged += (o) => Main.Instance.Overlay.ResetFilter();
+            filter.ValueChanged += o => Main.Instance.Overlay.ResetFilter();
 
             interval = pack.GetHandle(
                 "interval",
@@ -42,8 +43,23 @@ namespace DamageOverlay
                 Strings.numSteps_desc,
                 25,
                 Validators.IntRangeValidator(2, 256));
-            numSteps.ValueChanged += (o) => Main.Instance.Overlay.ResetColorMap();
+            numSteps.ValueChanged += o => Main.Instance.Overlay.ResetColorMap();
             LabelAndSliderWidget.ForInt(numSteps, 2, 256);
+
+            minColor = new ColorSetting(pack,
+                "minColor",
+                Strings.minColor,
+                Strings.minColor_desc,
+                Color.red,
+                o => Main.Instance.Overlay.ResetColorMap());
+
+            maxColor = new ColorSetting(pack,
+                "maxColor",
+                Strings.maxColor,
+                Strings.maxColor_desc,
+                Color.green,
+                o => Main.Instance.Overlay.ResetColorMap());
+
         }
 
         private float StepsFrom(int v)
@@ -82,5 +98,7 @@ namespace DamageOverlay
         public SettingHandle<int>          interval;
         public SettingHandle<int>          numSteps;
         public SettingHandle<Filters.Type> filter;
+        public ColorSetting                minColor;
+        public ColorSetting                maxColor;
     }
 }
