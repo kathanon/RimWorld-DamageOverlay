@@ -48,11 +48,18 @@
       <HintPath>$(RimWorld)\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>G:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>G:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddToggle_Detour.cs" />
     <Compile Include="DamageOverlay.cs" />
     <Compile Include="Filters.cs" />
+    <Compile Include="LabelAndSliderWidget.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MapInterface_Detour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

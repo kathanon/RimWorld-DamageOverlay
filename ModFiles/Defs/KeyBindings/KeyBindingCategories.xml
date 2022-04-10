@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<KeyBindingCategoryDef>
+		<defName>kathanon_DamageOverlayKeys</defName>
+		<label>Damage Overlay</label>
+		<description>Shortcuts for the Damage Overlay mod.</description>
+	</KeyBindingCategoryDef>
+
+</Defs>

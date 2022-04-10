@@ -1,4 +1,9 @@
 ﻿using HugsLib.Settings;
+using RimWorld;
+using System;
+using Verse;
+using Verse.Sound;
+using UnityEngine;
 
 namespace DamageOverlay
 {
@@ -10,9 +15,9 @@ namespace DamageOverlay
                 "opacity",
                 Strings.opacity,
                 Strings.opacity_desc,
-                0.33f,
-                Validators.FloatRangeValidator(0f, 1f));
+                0.33f);
             opacity.ValueChanged += (o) => Main.Instance.Overlay.ResetDrawer();
+            LabelAndSliderWidget.ForFloat(opacity, 0f, 1f, 0.01f, v => Math.Round(100f * v, 0) + "%");
 
             filter = pack.GetHandle(
                 "filter",
@@ -29,6 +34,7 @@ namespace DamageOverlay
                 Strings.interval_desc,
                 60,
                 Validators.IntRangeValidator(1, 10000));
+            LabelAndSliderWidget.For<int>(interval, 1, 10000, 1f, v => v.ToString(), StepsFrom, StepsTo);
 
             numSteps = pack.GetHandle(
                 "numSteps",
@@ -37,6 +43,39 @@ namespace DamageOverlay
                 25,
                 Validators.IntRangeValidator(2, 256));
             numSteps.ValueChanged += (o) => Main.Instance.Overlay.ResetColorMap();
+            LabelAndSliderWidget.ForInt(numSteps, 2, 256);
+        }
+
+        private float StepsFrom(int v)
+        {
+            if (v > 1000)
+            {
+                return v / 100 + 100f;
+            } 
+            else if (v > 100)
+            {
+                return v / 10 + 90f;
+            }
+            else
+            {
+                return v;
+            }
+        }
+
+        private int StepsTo(float v)
+        {
+            if (v > 110f)
+            {
+                return (int)(v - 100f) * 100;
+            }
+            else if (v > 100f)
+            {
+                return (int)(v - 90f) * 10;
+            }
+            else
+            {
+                return (int)v;
+            }
         }
 
         public SettingHandle<float>        opacity;

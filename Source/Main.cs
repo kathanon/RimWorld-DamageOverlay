@@ -1,7 +1,17 @@
 ﻿using HugsLib.Utils;
+using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
+using Verse;
 
 namespace DamageOverlay
 {
+    [DefOf]
+    public static class MyKeyBindings
+    {
+        public static KeyBindingDef kathanon_ToggleDamageOverlay;
+    }
+
     public class Main : HugsLib.ModBase
     {
         public Main()
@@ -45,5 +55,30 @@ namespace DamageOverlay
         {
             MySettings = new MySettings(Settings);
         }
-   }
+
+        public override void OnGUI()
+        {
+            if (Current.ProgramState != ProgramState.Playing ||
+                Find.CurrentMap == null ||
+                WorldRendererUtility.WorldRenderedNow ||
+                _overlay == null)
+            {
+                return;
+            }
+
+            if (Event.current.type != EventType.KeyDown || Event.current.keyCode == KeyCode.None)
+            {
+                return;
+            }
+
+            if (MyKeyBindings.kathanon_ToggleDamageOverlay.JustPressed)
+            {
+                if (WorldRendererUtility.WorldRenderedNow)
+                {
+                    return;
+                }
+                ShowOverlay = !ShowOverlay;
+            }
+        }
+    }
 }

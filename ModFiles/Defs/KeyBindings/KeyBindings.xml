@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<KeyBindingDef>
+		<category>kathanon_DamageOverlayKeys</category>
+		<defName>kathanon_ToggleDamageOverlay</defName>
+		<label>Toggle Damage Overlay</label>
+	</KeyBindingDef>
+
+</Defs>
