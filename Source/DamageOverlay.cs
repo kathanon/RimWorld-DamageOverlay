@@ -26,7 +26,7 @@ namespace DamageOverlay
             Color minColor = settings.minColor;
             Color maxColor = settings.maxColor;
             numSteps = settings.numSteps;
-            float alphaMax = settings.graduated ? 0.2f : 1f;
+            float alphaMax = settings.opacityLow;
 
             colors = new Color[numSteps];
             for (int i = 0; i < numSteps; i++)

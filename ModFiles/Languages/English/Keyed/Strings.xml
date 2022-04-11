@@ -2,11 +2,11 @@
 <LanguageData>
 	<kathanon.DamageOverlay.toggleToolTip>Show Damage Overlay</kathanon.DamageOverlay.toggleToolTip>
 
-	<kathanon.DamageOverlay.opacity.title>Opacity</kathanon.DamageOverlay.opacity.title>
-	<kathanon.DamageOverlay.opacity.desc>The opacity of the overlay on the map, from 0 (fully transparent) to 1 (opaque).</kathanon.DamageOverlay.opacity.desc>
+	<kathanon.DamageOverlay.opacity.title>Opacity: high damage</kathanon.DamageOverlay.opacity.title>
+	<kathanon.DamageOverlay.opacity.desc>The opacity of the overlay on the map for the most damaged buildings.</kathanon.DamageOverlay.opacity.desc>
 
-	<kathanon.DamageOverlay.graduated.title>Graduated opacity</kathanon.DamageOverlay.graduated.title>
-	<kathanon.DamageOverlay.graduated.desc>Let opacity increase with damage. Max will be what is set above.</kathanon.DamageOverlay.graduated.desc>
+	<kathanon.DamageOverlay.opacity.low.title>Opacity: low damage</kathanon.DamageOverlay.opacity.low.title>
+	<kathanon.DamageOverlay.opacity.low.desc>The opacity of the overlay on the map for the least damaged buildings. Expressed as a percentage of the opacity for high damage.</kathanon.DamageOverlay.opacity.low.desc>
 	
 	<kathanon.DamageOverlay.filter.title>Building filter</kathanon.DamageOverlay.filter.title>
 	<kathanon.DamageOverlay.filter.desc>Controls what buildings the overlay is applied to. Note that "buildings" include natural rock and similar.</kathanon.DamageOverlay.filter.desc>
