@@ -4,6 +4,9 @@
 
 	<kathanon.DamageOverlay.opacity.title>Opacity</kathanon.DamageOverlay.opacity.title>
 	<kathanon.DamageOverlay.opacity.desc>The opacity of the overlay on the map, from 0 (fully transparent) to 1 (opaque).</kathanon.DamageOverlay.opacity.desc>
+
+	<kathanon.DamageOverlay.graduated.title>Graduated opacity</kathanon.DamageOverlay.graduated.title>
+	<kathanon.DamageOverlay.graduated.desc>Let opacity increase with damage. Max will be what is set above.</kathanon.DamageOverlay.graduated.desc>
 	
 	<kathanon.DamageOverlay.filter.title>Building filter</kathanon.DamageOverlay.filter.title>
 	<kathanon.DamageOverlay.filter.desc>Controls what buildings the overlay is applied to. Note that "buildings" include natural rock and similar.</kathanon.DamageOverlay.filter.desc>

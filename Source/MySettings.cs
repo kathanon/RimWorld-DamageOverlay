@@ -20,6 +20,13 @@ namespace DamageOverlay
             opacity.ValueChanged += o => Main.Instance.Overlay.ResetDrawer();
             LabelAndSliderWidget.ForFloat(opacity, 0f, 1f, 0.01f, v => Math.Round(100f * v, 0) + "%");
 
+            graduated = pack.GetHandle(
+                "graduated",
+                Strings.graduated,
+                Strings.graduated_desc,
+                true);
+            graduated.ValueChanged += o => Main.Instance.Overlay.ResetColorMap();
+
             filter = pack.GetHandle(
                 "filter",
                 Strings.filter,
@@ -95,6 +102,7 @@ namespace DamageOverlay
         }
 
         public SettingHandle<float>        opacity;
+        public SettingHandle<bool>         graduated;
         public SettingHandle<int>          interval;
         public SettingHandle<int>          numSteps;
         public SettingHandle<Filters.Type> filter;

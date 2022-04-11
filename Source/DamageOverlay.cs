@@ -26,15 +26,18 @@ namespace DamageOverlay
             Color minColor = settings.minColor;
             Color maxColor = settings.maxColor;
             numSteps = settings.numSteps;
+            float alphaMax = settings.graduated ? 0.2f : 1f;
+
             colors = new Color[numSteps];
             for (int i = 0; i < numSteps; i++)
             {
-                var min = ((float) (colors.Length - i)) / numSteps;
                 var max = ((float) i) / numSteps;
+                var min = 1f - max;
                 var r = min * minColor.r + max * maxColor.r;
                 var g = min * minColor.g + max * maxColor.g;
                 var b = min * minColor.b + max * maxColor.b;
-                colors[i] = new Color(r, g, b);
+                var a = min + max * alphaMax;
+                colors[i] = new Color(r, g, b, a);
             }
             nextUpdateTick = 0;
         }
