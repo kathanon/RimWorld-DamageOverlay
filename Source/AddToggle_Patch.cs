@@ -5,11 +5,9 @@ using Verse;
 namespace DamageOverlay
 {
     [HarmonyPatch(typeof(PlaySettings), "DoPlaySettingsGlobalControls")]
-    public static class AddToggle_Detour
-    {
+    public static class AddToggle_Patch {
         [HarmonyPostfix]
-        static void PostFix(WidgetRow row, bool worldView)
-        {
+        public static void PostFix(WidgetRow row, bool worldView) {
             if (worldView)
                 return;
 

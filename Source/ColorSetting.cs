@@ -124,11 +124,12 @@ namespace DamageOverlay
         }
 
         private const float colorMargin = 3f;
-        private const float gap = 8f;
+        private const float gap = 4f;
 
         public bool Update(Rect rect)
         {
-            rect.SplitVertically(rect.height + gap / 2f, out Rect colorPart, out Rect sliderPart, gap / 2f);
+            Rect colorPart = rect.LeftPartPixels(rect.height + gap);
+            Rect sliderPart = rect.RightPartPixels(rect.width - 2 * gap - rect.height);
             colorPart = colorPart.ContractedBy(colorMargin);
 
             Widgets.DrawBoxSolid(colorPart, this);
